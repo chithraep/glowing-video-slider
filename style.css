@@ -1,0 +1,71 @@
+/* CSS RESET */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Kaushan-Script,sans-serif;
+}
+.video-slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+   
+}
+.video-content p{
+    max-width: 500px;
+
+}
+.video-slider,.video-slide,.video-title{
+    height: 100vh;
+    display: flex;
+    flex-direction: coloumn;
+    align-items: center;
+    justify-content: center;
+}
+.video-slider,.video-slide{
+    height: 100vh;
+    flex-basis: 100vh;
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.video-slider,.video-slide,video{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+.video-slider,.video-slide:nth-child(1){
+    
+    
+    clip-path: polygon(0 0, 33% 0, 33% 100%, 0% 100%);
+}
+
+.video-slider,.video-slide:nth-child(2){
+   
+    clip-path: polygon(33% 0, 67% 0, 67% 100%, 33% 100%);}
+
+.video-slider,.video-slide:nth-child(3){
+  
+    clip-path: polygon(67% 0, 100% 0, 100% 100%, 67% 100%);
+}
+.video-slider,.video-slide.active{
+  
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+    }
